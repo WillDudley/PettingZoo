@@ -8,14 +8,14 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="" />
     <meta property="og:url" content="https://pettingzoo.farama.org/tutorials/cleanrl/implementing_PPO.html" /><meta name="twitter:card" content="summary_large_image"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Tianshou: Basic API Usage" href="../../tianshou/beginner/" /><link rel="prev" title="Testing Environments" href="../../../content/environment_tests/" />
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Tianshou: Basic API Usage" href="../../tianshou/beginner/" /><link rel="prev" title="Third-Party Environments" href="../../../environments/third_party_envs/" />
         <link rel="canonical" href="https://pettingzoo.farama.org/tutorials/cleanrl/implementing_PPO.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.png"/><meta name="generator" content="sphinx-5.3.0, furo 2022.09.15.dev1"/>
         <title>CleanRL: Implementing PPO - PettingZoo Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=a9e5ba0c0bf3b12d8e0ea7b9febdea61fa484836" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=a614025deca43086db03c234d5a3a2047a0241ae" />
     
     
 
@@ -55,7 +55,7 @@
           <div class="farama-header-menu">
             <div class="farama-header-menu__btn">
               <span class="farama-header-menu__btn-name">
-                The Farama Foundation
+                Farama Foundation
               </span>
               <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
                   <defs></defs>
@@ -67,8 +67,8 @@
             <div class="farama-header-menu-container">
               <div class="farama-header-menu__header">
                 <a href="https://farama.org">
-                  <img class="farama-header-menu__logo" src="../../../_static/img/farama_solid_white.svg" alt="The Farama Foundation">
-                  <span>The Farama Foundation</span>
+                  <img class="farama-header-menu__logo" src="../../../_static/img/farama_solid_white.svg" alt="Farama Foundation">
+                  <span>Farama Foundation</span>
                 </a>
                 <button id="farama-close-menu">
                   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
@@ -334,7 +334,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -354,15 +354,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../content/basic_usage/">Basic Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../content/environment_creation/">Environment Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../content/environment_tests/">Testing Environments</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">CleanRL: Implementing PPO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tianshou/beginner/">Tianshou: Basic API Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tianshou/intermediate/">Tianshou: Training Agents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tianshou/advanced/">Tianshou: CLI and Logging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../rllib/holdem/">RLLib 2: RL for Simple Poker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../rllib/pistonball/">RLLib 2: RL for Pistonball</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul>
@@ -439,6 +430,15 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../environments/third_party_envs/">Third-Party Environments</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">CleanRL: Implementing PPO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tianshou/beginner/">Tianshou: Basic API Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tianshou/intermediate/">Tianshou: Training Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tianshou/advanced/">Tianshou: CLI and Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rllib/holdem/">RLLib 2: RL for Simple Poker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rllib/pistonball/">RLLib 2: RL for Pistonball</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/Farama-Foundation/PettingZoo">Github</a></li>
@@ -481,7 +481,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -490,18 +490,24 @@
           
           <section id="cleanrl-implementing-ppo">
 <h1>CleanRL: Implementing PPO<a class="headerlink" href="#cleanrl-implementing-ppo" title="Permalink to this heading">#</a></h1>
+<section id="environment-setup">
+<h2>Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this heading">#</a></h2>
+<p>To follow this tutorial, you will need to install the dependencies shown below. It is recommended to use a newly-created virtual environment to avoid dependency conflicts.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SuperSuit==3.6.0
+torch==1.12.1
+pettingzoo==1.22.0
+</pre></div>
+</div>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this heading">#</a></h2>
+<p>The following code should run without any issues. The comments are designed to help you understand how to use PettingZoo with CleanRL. If you have any questions, please feel free to ask in the <a class="reference external" href="https://discord.gg/nhvKkYa6qX">Discord server</a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Basic code which shows what it&#39;s like to run PPO on the Pistonball env using the parallel API, this code is inspired by CleanRL.</span>
 
 <span class="sd">This code is exceedingly basic, with no logging or weights saving.</span>
 <span class="sd">The intention was for users to have a (relatively clean) ~200 line file to refer to when they want to design their own learning algorithm.</span>
 
 <span class="sd">Author: Jet (https://github.com/jjshoots)</span>
-
-<span class="sd">Dependencies:</span>
-<span class="sd">- SuperSuit==3.6.0</span>
-<span class="sd">- numpy==1.23.2</span>
-<span class="sd">- torch==1.12.1</span>
-<span class="sd">- pettingzoo==1.22.0</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -779,6 +785,7 @@
 </pre></div>
 </div>
 </section>
+</section>
 
         </article>
       </div>
@@ -794,14 +801,14 @@
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-            <a class="prev-page" href="../../../content/environment_tests/">
+            <a class="prev-page" href="../../../environments/third_party_envs/">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Testing Environments</div>
+                <div class="title">Third-Party Environments</div>
                 
               </div>
             </a>
@@ -830,8 +837,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">CleanRL: Implementing PPO</a><ul>
+<li><a class="reference internal" href="#environment-setup">Environment Setup</a></li>
+<li><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

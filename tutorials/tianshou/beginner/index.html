@@ -15,7 +15,7 @@
         <title>Tianshou: Basic API Usage - PettingZoo Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=a9e5ba0c0bf3b12d8e0ea7b9febdea61fa484836" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=a614025deca43086db03c234d5a3a2047a0241ae" />
     
     
 
@@ -55,7 +55,7 @@
           <div class="farama-header-menu">
             <div class="farama-header-menu__btn">
               <span class="farama-header-menu__btn-name">
-                The Farama Foundation
+                Farama Foundation
               </span>
               <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
                   <defs></defs>
@@ -67,8 +67,8 @@
             <div class="farama-header-menu-container">
               <div class="farama-header-menu__header">
                 <a href="https://farama.org">
-                  <img class="farama-header-menu__logo" src="../../../_static/img/farama_solid_white.svg" alt="The Farama Foundation">
-                  <span>The Farama Foundation</span>
+                  <img class="farama-header-menu__logo" src="../../../_static/img/farama_solid_white.svg" alt="Farama Foundation">
+                  <span>Farama Foundation</span>
                 </a>
                 <button id="farama-close-menu">
                   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
@@ -334,7 +334,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -354,15 +354,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../content/basic_usage/">Basic Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../content/environment_creation/">Environment Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../content/environment_tests/">Testing Environments</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../cleanrl/implementing_PPO/">CleanRL: Implementing PPO</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Tianshou: Basic API Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../intermediate/">Tianshou: Training Agents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced/">Tianshou: CLI and Logging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../rllib/holdem/">RLLib 2: RL for Simple Poker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../rllib/pistonball/">RLLib 2: RL for Pistonball</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul>
@@ -439,6 +430,15 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../environments/third_party_envs/">Third-Party Environments</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cleanrl/implementing_PPO/">CleanRL: Implementing PPO</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Tianshou: Basic API Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intermediate/">Tianshou: Training Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/">Tianshou: CLI and Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rllib/holdem/">RLLib 2: RL for Simple Poker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rllib/pistonball/">RLLib 2: RL for Pistonball</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/Farama-Foundation/PettingZoo">Github</a></li>
@@ -481,7 +481,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -490,6 +490,17 @@
           
           <section id="tianshou-basic-api-usage">
 <h1>Tianshou: Basic API Usage<a class="headerlink" href="#tianshou-basic-api-usage" title="Permalink to this heading">#</a></h1>
+<section id="environment-setup">
+<h2>Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this heading">#</a></h2>
+<p>To follow this tutorial, you will need to install the dependencies shown below. It is recommended to use a newly-created virtual environment to avoid dependency conflicts.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pettingzoo==1.22.0
+git+https://github.com/thu-ml/tianshou
+</pre></div>
+</div>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this heading">#</a></h2>
+<p>The following code should run without any issues. The comments are designed to help you understand how to use PettingZoo with CleanRL. If you have any questions, please feel free to ask in the <a class="reference external" href="https://discord.gg/nhvKkYa6qX">Discord server</a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;This is a minimal example to show how to use Tianshou with a PettingZoo environment. No training of agents is done here.</span>
 
 <span class="sd">Author: Will (https://github.com/WillDudley)</span>
@@ -527,6 +538,7 @@
     <span class="n">result</span> <span class="o">=</span> <span class="n">collector</span><span class="o">.</span><span class="n">collect</span><span class="p">(</span><span class="n">n_episode</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">render</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
 </section>
 
         </article>
@@ -579,8 +591,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Tianshou: Basic API Usage</a><ul>
+<li><a class="reference internal" href="#environment-setup">Environment Setup</a></li>
+<li><a class="reference internal" href="#code">Code</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

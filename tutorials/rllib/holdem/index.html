@@ -15,7 +15,7 @@
         <title>RLLib 2: RL for Simple Poker - PettingZoo Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=a9e5ba0c0bf3b12d8e0ea7b9febdea61fa484836" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=a614025deca43086db03c234d5a3a2047a0241ae" />
     
     
 
@@ -55,7 +55,7 @@
           <div class="farama-header-menu">
             <div class="farama-header-menu__btn">
               <span class="farama-header-menu__btn-name">
-                The Farama Foundation
+                Farama Foundation
               </span>
               <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
                   <defs></defs>
@@ -67,8 +67,8 @@
             <div class="farama-header-menu-container">
               <div class="farama-header-menu__header">
                 <a href="https://farama.org">
-                  <img class="farama-header-menu__logo" src="../../../_static/img/farama_solid_white.svg" alt="The Farama Foundation">
-                  <span>The Farama Foundation</span>
+                  <img class="farama-header-menu__logo" src="../../../_static/img/farama_solid_white.svg" alt="Farama Foundation">
+                  <span>Farama Foundation</span>
                 </a>
                 <button id="farama-close-menu">
                   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
@@ -355,15 +355,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../content/environment_creation/">Environment Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../content/environment_tests/">Testing Environments</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../cleanrl/implementing_PPO/">CleanRL: Implementing PPO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tianshou/beginner/">Tianshou: Basic API Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tianshou/intermediate/">Tianshou: Training Agents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tianshou/advanced/">Tianshou: CLI and Logging</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">RLLib 2: RL for Simple Poker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pistonball/">RLLib 2: RL for Pistonball</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../api/aec/">AEC API</a></li>
@@ -439,6 +430,15 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../environments/third_party_envs/">Third-Party Environments</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../cleanrl/implementing_PPO/">CleanRL: Implementing PPO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tianshou/beginner/">Tianshou: Basic API Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tianshou/intermediate/">Tianshou: Training Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tianshou/advanced/">Tianshou: CLI and Logging</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">RLLib 2: RL for Simple Poker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pistonball/">RLLib 2: RL for Pistonball</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/Farama-Foundation/PettingZoo">Github</a></li>
@@ -490,15 +490,26 @@
           
           <section id="rllib-2-rl-for-simple-poker">
 <h1>RLLib 2: RL for Simple Poker<a class="headerlink" href="#rllib-2-rl-for-simple-poker" title="Permalink to this heading">#</a></h1>
+<section id="environment-setup">
+<h2>Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this heading">#</a></h2>
+<p>To follow this tutorial, you will need to install the dependencies shown below. It is recommended to use a newly-created virtual environment to avoid dependency conflicts.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>pickle5==0.0.11
+Pillow==9.2.0
+torch==1.12.1
+SuperSuit==3.6.0
+ray[rllib]==2
+pettingzoo==1.22.0
+</pre></div>
+</div>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this heading">#</a></h2>
+<p>The following code should run without any issues. The comments are designed to help you understand how to use PettingZoo with RLLib 2. If you have any questions, please feel free to ask in the <a class="reference external" href="https://discord.gg/nhvKkYa6qX">Discord server</a>.</p>
 <section id="training-the-rl-agent">
-<h2>Training the RL agent<a class="headerlink" href="#training-the-rl-agent" title="Permalink to this heading">#</a></h2>
+<h3>Training the RL agent<a class="headerlink" href="#training-the-rl-agent" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Uses Ray&#39;s RLLib to train agents to play Leduc Holdem.</span>
 
 <span class="sd">Author: Rohan (https://github.com/Rohan138)</span>
-
-<span class="sd">Dependencies:</span>
-<span class="sd">- ray[rllib]=2</span>
-<span class="sd">- pettingzoo==1.22.0</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">os</span>
@@ -616,14 +627,10 @@
 </div>
 </section>
 <section id="watching-the-trained-rl-agent-play">
-<h2>Watching the trained RL agent play<a class="headerlink" href="#watching-the-trained-rl-agent-play" title="Permalink to this heading">#</a></h2>
+<h3>Watching the trained RL agent play<a class="headerlink" href="#watching-the-trained-rl-agent-play" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Uses Ray&#39;s RLLib to view trained agents playing Leduoc Holdem.</span>
 
 <span class="sd">Author: Rohan (https://github.com/Rohan138)</span>
-
-<span class="sd">Dependencies:</span>
-<span class="sd">- ray[rllib]=2</span>
-<span class="sd">- pettingzoo==1.22.0</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">argparse</span>
@@ -720,6 +727,7 @@
 </div>
 </section>
 </section>
+</section>
 
         </article>
       </div>
@@ -784,8 +792,12 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">RLLib 2: RL for Simple Poker</a><ul>
+<li><a class="reference internal" href="#environment-setup">Environment Setup</a></li>
+<li><a class="reference internal" href="#code">Code</a><ul>
 <li><a class="reference internal" href="#training-the-rl-agent">Training the RL agent</a></li>
 <li><a class="reference internal" href="#watching-the-trained-rl-agent-play">Watching the trained RL agent play</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
